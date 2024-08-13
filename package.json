@@ -22,6 +22,7 @@
     "@egoist/tailwindcss-icons": "^1.8.1",
     "@iconify/json": "^2.2.235",
     "@iconify/tailwind": "^1.1.2",
+    "swiper": "^11.1.9",
     "unplugin-icons": "^0.19.2"
   }
 }
