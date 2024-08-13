@@ -3,37 +3,29 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 
+
+
 ---
 
 <!-- Slider main container -->
-<div class="swiper mt-10 col-span-1 sm:col-span-2">
+<div class="swiper mt-10 col-span-1 sm:col-span-2 ">
   <!-- Additional required wrapper -->
   <div class="swiper-wrapper">
     <!-- Slides -->
 
         <div class="swiper-slide">
           <img
-            src="port1.gif"
+            src="/public/images/products/cry.gif"
             alt="Product image"
             class="w-full h-full object-cover px-10"
           />
-
         </div>
         <div class="swiper-slide">
           <img
-          src="port1.gif"
-          alt="Product image"
-            class="w-full h-full object-cover px-10"
-          />
-
-        </div>
-        <div class="swiper-slide">
-          <img
-            src="port1.gif"
+            src="/public/images/products/cry.gif"
             alt="Product image"
             class="w-full h-full object-cover px-10"
           />
-
         </div>
   </div>
   <!-- If we need pagination -->
@@ -43,7 +35,7 @@ import 'swiper/css/pagination';
 <style>
   .swiper {
     width: 100%;
-    height: 600px;
+    height: 50%;
   }
 </style>
 
@@ -51,14 +43,12 @@ import 'swiper/css/pagination';
   import Swiper from 'swiper';
   import { Pagination } from 'swiper/modules';
 
-  document.addEventListener('astro:page-load', () => {
-    const swiper = new Swiper('.swiper', {
-      // If we need pagination
-      pagination: {
-        el: '.swiper-pagination',
-      },
+  const swiper = new Swiper('.swiper', {
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+    },
 
-      modules: [Pagination],
-    });
+    modules: [Pagination],
   });
 </script>
