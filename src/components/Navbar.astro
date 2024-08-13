@@ -1,0 +1,89 @@
+---
+const menuItems = [
+  { name: "Inicio", href: "/" },
+  {
+    name: "Ropa",
+    href: "/ropa",
+    submenu: [
+      { name: "Vestidos", href: "/ropa/vestidos" },
+      { name: "Blusas", href: "/ropa/blusas" },
+      { name: "Pantalones", href: "/ropa/pantalones" },
+      { name: "Chaquetas", href: "/ropa/chaquetas" },
+      { name: "Polerones", href: "/ropa/polerones" },
+      { name: "Faldas", href: "/ropa/faldas" },
+    ],
+  },
+  {
+    name: "Accesorios",
+    href: "/accesorios",
+    submenu: [
+      { name: "Bufandas", href: "/accesorios/bufandas" },
+      { name: "Tops", href: "/accesorios/tops" },
+      { name: "Pantys", href: "/accesorios/pantys" },
+    ],
+  },
+  { name: "Ofertas", href: "/ofertas" },
+];
+---
+
+<nav class="bg-white border-b border-gray-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <div class="flex-shrink-0">
+        <a href="/" class="text-2xl font-bold text-pink-600">
+          Fenice
+        </a>
+      </div>
+      <div class="hidden md:block">
+        <div class="ml-10 flex items-baseline space-x-4">
+          {menuItems.map((item) => (
+            <div class="relative group">
+              <a
+                href={item.href}
+                class="text-gray-700 hover:text-pink-600 px-3 py-2 rounded-md text-sm font-medium"
+              >
+                {item.name}
+              </a>
+              {item.submenu && (
+                <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-md mt-1 z-50">
+                  {item.submenu.map((subItem) => (
+                    <a
+                      href={subItem.href}
+                      class="block px-4 py-2 text-gray-700 hover:bg-pink-100 hover:text-pink-600"
+                    >
+                      {subItem.name}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+      <div class="flex items-center">
+        <a
+          href="/carrito"
+          class="text-gray-700 hover:text-pink-600 px-3 py-2 rounded-md text-sm font-medium"
+        >
+          Carrito
+        </a>
+        <button class="md:hidden text-gray-700 focus:outline-none">
+          <svg
+            class="h-6 w-6"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
